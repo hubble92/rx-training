@@ -1,0 +1,51 @@
+{
+  "name": "rx-training",
+  "version": "1.0.0",
+  "description": "rx lessons",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hubble92/rx-training.git"
+  },
+  "keywords": [
+    "rx",
+    "rxjs",
+    "reactive",
+    "extention"
+  ],
+  "author": "Habble92",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hubble92/rx-training/issues"
+  },
+  "homepage": "https://github.com/hubble92/rx-training#readme",
+  "dependencies": {
+    "@types/jest": "^23.3.1",
+    "jest": "^23.5.0",
+    "rxjs": "^6.2.2",
+    "ts-jest": "^23.1.4",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/*/*.test.ts"
+    ]
+  }
+}
