@@ -3,13 +3,21 @@
   "rulesDirectory": [],
   "rules": {
     "max-line-length": {
-      "options": [120]
+      "options": [
+        120
+      ]
     },
     "new-parens": true,
     "no-arg": true,
     "no-bitwise": true,
     "no-conditional-assignment": true,
     "no-consecutive-blank-lines": false,
+    "max-classes-per-file": false,
+    "no-unused-expression": false,
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
     "no-console": {
       "severity": "warning",
       "options": [
@@ -24,7 +32,9 @@
   },
   "jsRules": {
     "max-line-length": {
-      "options": [120]
+      "options": [
+        120
+      ]
     }
   }
 }
