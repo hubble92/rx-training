@@ -1,5 +1,5 @@
 export interface Observer {
-    update();
+    update(): void;
 }
 
 export interface Subject<T> {

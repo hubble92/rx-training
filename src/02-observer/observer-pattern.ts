@@ -5,7 +5,7 @@ interface State {
 }
 
 class ScrumMaster implements Subject<State> {
-    public list: Observer[];
+    public list: Observer[] = [];
     public state: State;
 
     public attach(ob: Observer): void {
@@ -29,9 +29,9 @@ class ScrumMaster implements Subject<State> {
 }
 
 class Developer implements Observer {
-    private subject: Subject;
+    private subject: Subject<State>;
 
-    constructor(subject: Subject) {
+    constructor(subject: Subject<State>) {
         this.subject = subject;
         this.subject.attach(this);
     }
@@ -43,7 +43,7 @@ class Developer implements Observer {
 
 
 (function main() {
-    const master: Subject = new ScrumMaster<State>();
+    const master: Subject<State> = new ScrumMaster();
 
     new Developer(master);
     new Developer(master);
@@ -52,9 +52,9 @@ class Developer implements Observer {
     console.log(`Planing has been started`);
     console.log(`Tha master add new task`);
 
-    master.setState(["setup"]);
-    master.setState(["setup", "develop"]);
-    master.setState(["setup", "develop", "test"]);
+    master.setState({tasks: ["setup"]});
+    master.setState({tasks: ["setup", "develop"]});
+    master.setState({tasks: ["setup", "develop", "test"]});
 
     console.log(`Planing is over`);
 
