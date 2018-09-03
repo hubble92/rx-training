@@ -4,7 +4,7 @@ interface State {
     tasks: string[];
 }
 
-class ScrumMaster implements Subject<State> {
+export class ScrumMaster implements Subject<State> {
     public list: Observer[] = [];
     public state: State;
 
@@ -28,7 +28,7 @@ class ScrumMaster implements Subject<State> {
     }
 }
 
-class Developer implements Observer {
+export class Developer implements Observer {
     private subject: Subject<State>;
 
     constructor(subject: Subject<State>) {
