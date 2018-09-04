@@ -5,5 +5,5 @@ export interface Iterator {
 }
 
 export interface Aggregate {
-    iterator(): Iterator;
+    getIterator(): Iterator;
 }

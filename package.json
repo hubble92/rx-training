@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --coverage",
     "start:02": "",
-    "start:03": "ts-node ./src/03-iterator/iterator-pattern.ts"
+    "start:03": "ts-node ./src/03-iterator/Iterator-pattern.ts"
   },
   "repository": {
     "type": "git",
