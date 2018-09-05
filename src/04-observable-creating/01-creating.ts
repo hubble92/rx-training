@@ -1,6 +1,6 @@
-import {Observable} from "rxjs";
+import {Observable, Observer} from "rxjs";
 
-const observable$ = new Observable((observer) => {
+const observable$ = new Observable((observer: Observer<number>) => {
 
     observer.next(1);
     observer.next(2);
@@ -11,4 +11,4 @@ const observable$ = new Observable((observer) => {
 
 });
 
-observable$.subscribe((value) => console.log(`${value}`));
+observable$.subscribe((value: number) => console.log(`${value}`));
