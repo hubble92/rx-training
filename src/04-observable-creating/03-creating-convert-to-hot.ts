@@ -1,5 +1,5 @@
 import {interval, Observable} from "rxjs";
-import {share} from "rxjs/operators";
+// import {share} from "rxjs/operators";
 
 import {createSubscription} from "./utils";
 
