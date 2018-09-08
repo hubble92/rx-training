@@ -9,8 +9,8 @@ class Producer {
     private count: number = 0;
     private interval: any = null;
 
-    public add(l: Listener): Unsubscribe {
-        this.list.push(l);
+    public add(listener: Listener): Unsubscribe {
+        this.list.push(listener);
 
         if (!this.interval) {
             this.interval = setInterval(() => {
@@ -18,14 +18,13 @@ class Producer {
             }, 1000);
         }
 
-
         return () => {
-            this.remove(l);
+            this.remove(listener);
         };
     }
 
-    public remove(l: Listener): void {
-        this.list = this.list.filter((i) => i !== l);
+    public remove(listener: Listener): void {
+        this.list = this.list.filter((i) => i !== listener);
         if (this.list.length > 0) {
             clearInterval(this.interval);
         }
@@ -45,11 +44,12 @@ class Producer {
     }
 }
 
-
 const coldInterval$ = new Observable((observer) => {
     const producer: Producer = new Producer();
 
-    producer.add(observer.next);
+    producer.add(function(value){
+        observer.next(value);
+    });
 
     return () => {
         producer.removeAll();
@@ -58,3 +58,7 @@ const coldInterval$ = new Observable((observer) => {
 
 
 coldInterval$.subscribe(createSubscription("cold"));
+
+setTimeout(() => {
+    coldInterval$.subscribe(createSubscription("cold two"))
+}, 3000);
