@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
+    "test:01": "jest --coverage ./src/01-event-emitter/event-emitter.test.ts",
     "start:02": "",
     "start:03": "ts-node ./src/03-iterator/Iterator-pattern.ts"
   },
