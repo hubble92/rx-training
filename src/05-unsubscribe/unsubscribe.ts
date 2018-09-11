@@ -1,5 +1,5 @@
 import {Subscription, timer} from "rxjs";
-import {createSubscription} from "../04-observable-creating/utils";
+import {createSubscription} from "../04-create/utils";
 
 const interval$ = timer(0, 1000);
 
